@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check EvenOrOdd</title>
+</head>
+<body>
+    <h1 id="header">Check Even or Odd Number</h1>
+    <p>Inter any number</p>
+    <input type="text" name="" id="number" autocomplete="off">
+    <button type="submit" id="btn">Submit</button>
+
+    <script>
+
+        let header = document.getElementById("header");
+        let number = document.getElementById("number");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            let num = parseInt(number.value);
+            if(isNaN(num)){
+                header.innerHTML = "Inter a valid number";
+            }
+            else if(num % 2 === 0){
+                header.innerHTML = `This is an Even number = ${num}`;
+            }
+            else{
+                header.innerHTML = `This is an Odd number = ${num}`;
+            }
+        })
+
+    </script>
+
+</body>
+</html>

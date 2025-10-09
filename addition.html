@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition</title>
+</head>
+<body>
+    <h1 id="header">Addition</h1>
+    <p>Inter any number</p>
+    <input type="text" name="" id="number" autocomplete="off">
+    <button type="submit" id="btn">Submit</button>
+
+    <script>
+
+        let header = document.getElementById("header");
+        let number = document.getElementById("number");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            let num = parseInt(number.value);
+            let sum = 0;
+            if(isNaN(num) || num <= 0){
+                header.innerHTML = "Please enter valid number"
+            }
+            else{
+                for(n = 1; n <= num; n++){
+                    sum = sum + n;
+                    header.innerHTML = `The sum of ${n} numbers of ${sum}.`;    
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>

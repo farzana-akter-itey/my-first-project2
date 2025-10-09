@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Any serial number print</title>
+</head>
+<body>
+    <h1 id="header">Any serial number print</h1>
+    <p>Inter any number</p>
+    <input type="text" name="" id="number" autocomplete="off">
+    <button type="submit" id="btn">Submit</button>
+
+    <script>
+
+        // let header = document.getElementById("header");
+        let number = document.getElementById("number");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            let num = parseInt(number.value);
+            if(isNaN(num) || num <= 0){
+                console.log("Enter valid number");
+            }
+            else{
+                for(n = 1; n <= num; n++){
+                    console.log(n);
+                }
+            }
+                
+        });
+
+    </script>
+
+</body>
+</html>

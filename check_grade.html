@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+</head>
+<body>
+    <h1 id="header">Check Grade</h1>
+    <p>Inter any mark</p>
+    <input type="text" name="" id="number" autocomplete="off">
+    <button type="submit" id="btn">Submit</button>
+
+    <script>
+
+        let header = document.getElementById("header");
+        let number = document.getElementById("number");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            if((number.value >= 80) && (number.value <= 100)){
+                header.innerHTML = "Grade is A+";
+            }
+            else if(number.value >= 70 && number.value < 80){
+                header.innerHTML = "Grade is A";
+            }
+            else if((number.value >= 60) && (number.value < 70)){
+                header.innerHTML = "Grade is A-";
+            }
+            else if(number.value >= 50 && number.value < 60){
+                header.innerHTML = "Grade is B";
+            }
+            else if(number.value >= 40 && number.value < 50){
+                header.innerHTML = "Grade is C";
+            }
+            else if((number.value >= 33) && (number.value < 40)){
+                header.innerHTML = "Grade is D";
+            }
+            else if(number.value >= 0 && number.value < 33){
+                header.innerHTML = "Fail";
+            }else{
+                header.innerHTML = "Please enter valid number.."
+            }
+
+        })
+
+    </script>
+
+</body>
+</html>
