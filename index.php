@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>PHP Calculator</h1>
+        <div class="container">
+            <div>
+                <form method="POST" action="">
+                    <div class="input">
+                        <input type="text" name="num1" placeholder="Enter First Number">
+                    </div>
+                    <div class="input">
+                        <input type="text" name="num2" placeholder="Enter Second Number">
+                    </div>
+                    <div class="input">
+                        <input type="submit" class="opa" name="operation" value="+">
+                        <input type="submit" class="opa" name="operation" value="-">
+                        <input type="submit" class="opa" name="operation" value="*">
+                        <input type="submit" class="opa" name="operation" value="/">
+                    </div>
+                    <div class="input">
+                        <input type="submit" name="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="input">
+            <p> 
+                <?php 
+                    if (isset($_POST['operation'])) {
+                        $num1 = $_POST['num1'];
+                        $num2 = $_POST['num2'];
+                        // echo "{$num1} {$num2}";
+                        $operation = $_POST['operation'];
+                        
+                        if(is_numeric($num1) && is_numeric($num2)){
+
+                            switch($operation){
+                                case "+": $result = $num1 + $num2;
+                                    echo "The addition of two number is {$result}";
+                                    break;
+                                case "-": $result = $num1 - $num2;
+                                    echo "The subtraction of two number is {$result}";
+                                    break;
+                                case "*": $result = $num1 * $num2;
+                                    echo "The multiplication of two number is {$result}";
+                                    break;
+                                case "/": 
+                                    if($num2 == 0){
+                                        echo "Division by zero is not allowed.";
+                                    }
+                                    else{
+                                        $result = $num1 / $num2;
+                                        echo "The division of two number is {$result}";
+                                    } 
+                                    break;
+                                default: echo "Invalid Operation";
+                            }   
+                        }
+                        else {
+                            echo "Please enter valid numbers.";
+                        }    
+
+                    }
+                ?>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
