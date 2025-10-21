@@ -19,10 +19,14 @@
                         <input type="text" name="num2" placeholder="Enter Second Number">
                     </div>
                     <div class="input">
-                        <input type="submit" class="opa" name="operation" value="+">
-                        <input type="submit" class="opa" name="operation" value="-">
-                        <input type="submit" class="opa" name="operation" value="*">
-                        <input type="submit" class="opa" name="operation" value="/">
+                        <span>+</span> 
+                        <input type="radio" class="opa"name="operation" value="+">
+                        <span>-</span>
+                        <input type="radio" class="opa" name="operation" value="-">
+                        <span>*</span> 
+                        <input type="radio" class="opa" name="operation" value="*">
+                        <span>/</span> 
+                        <input type="radio" id="opa" class="opa" name="operation" value="/">
                     </div>
                     <div class="input">
                         <input type="submit" name="submit" value="Submit">
@@ -36,28 +40,27 @@
                     if (isset($_POST['operation'])) {
                         $num1 = $_POST['num1'];
                         $num2 = $_POST['num2'];
-                        // echo "{$num1} {$num2}";
                         $operation = $_POST['operation'];
                         
                         if(is_numeric($num1) && is_numeric($num2)){
 
                             switch($operation){
-                                case "+": $result = $num1 + $num2;
-                                    echo "The addition of two number is {$result}";
+                                case "+": $sum = $num1 + $num2;
+                                    echo "The addition of two number is {$sum}";
                                     break;
-                                case "-": $result = $num1 - $num2;
-                                    echo "The subtraction of two number is {$result}";
+                                case "-": $sub = $num1 - $num2;
+                                    echo "The subtraction of two number is {$sub}";
                                     break;
-                                case "*": $result = $num1 * $num2;
-                                    echo "The multiplication of two number is {$result}";
+                                case "*": $multi = $num1 * $num2;
+                                    echo "The multiplication of two number is {$multi}";
                                     break;
                                 case "/": 
                                     if($num2 == 0){
                                         echo "Division by zero is not allowed.";
                                     }
                                     else{
-                                        $result = $num1 / $num2;
-                                        echo "The division of two number is {$result}";
+                                        $div = $num1 / $num2;
+                                        echo "The division of two number is {$div}";
                                     } 
                                     break;
                                 default: echo "Invalid Operation";

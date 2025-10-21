@@ -43,9 +43,14 @@ input {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
 
+
 }
 
-.opa {
-    margin: auto;
-    
+span {
+    margin-left: 25px;
+    padding-right: 5px;
 }
+#opa {
+    margin-right: 30px;
+}
+
